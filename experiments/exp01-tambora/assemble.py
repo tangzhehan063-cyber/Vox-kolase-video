@@ -12,7 +12,7 @@ import glob, json, os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 T = json.load(open(f"{HERE}/timing.json"))
-video = f"{HERE}/out/tambora_silent.mp4"
+video = sys.argv[1] if len(sys.argv) > 1 else f"{HERE}/out/tambora_silent.mp4"   # pass out/tambora_captioned.mp4 for the captioned cut
 music = f"{HERE}/audio/music_temp.wav"
 vo = []
 for b in T["beats"]:
@@ -35,10 +35,10 @@ if vo:
     parts.append(f"[1:a]volume=0.55,{fade}[m]")
     parts.append("[m][vo1]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=400[md]")
     parts.append("[md][vo2]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=11[a]")
-    out = f"{HERE}/out/tambora_final.mp4"
+    out = f"{HERE}/out/tambora_final.mp4" if "captioned" not in video else f"{HERE}/out/tambora_captions_final.mp4"
 else:
     parts = [f"[1:a]volume=0.8,{fade},loudnorm=I=-16:TP=-1.5:LRA=11[a]"]
-    out = f"{HERE}/out/tambora_TEMP_audio.mp4"
+    out = f"{HERE}/out/tambora_TEMP_audio.mp4" if "captioned" not in video else f"{HERE}/out/tambora_captions_TEMP_audio.mp4"
 cmd += ["-filter_complex", ";".join(parts), "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", out]
 subprocess.check_call(cmd)
 print("wrote", out, "(VO beats:", len(vo), ")")

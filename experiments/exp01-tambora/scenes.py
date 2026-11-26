@@ -5,7 +5,7 @@ import json, math, os, random
 import numpy as np
 from PIL import Image, ImageDraw
 
-from render import Layer, Scene, W, H, clamp, ease_out, ease_io
+from render import Layer, Scene, W, H, clamp, ease_out, ease_io, smap
 from paperkit import *
 import paperkit
 from sprites_a import ortho, TAMBORA, MANNHEIM, thermometer
@@ -262,8 +262,8 @@ def build(T):
     film = []
     trans = {
         "S2": ("torn_wipe", 0.7, 1, None), "S3": ("rise", 0.8, 1, None), "S4": ("push", 0.6, 1, None),
-        "S5": ("drop", 0.7, 1, None), "S6": ("iris", 0.75, 1, (0.583, 0.305)), "S7": ("torn_wipe", 0.7, 2, None),
-        "S8": ("iris", 0.75, 1, (0.30, 0.73)),
+        "S5": ("drop", 0.7, 1, None), "S6": ("iris", 0.75, 1, ((smap(630, 585)[0]) / W, smap(630, 585)[1] / H)), "S7": ("torn_wipe", 0.7, 2, None),
+        "S8": ("iris", 0.75, 1, ((smap(330, 1400)[0]) / W, smap(330, 1400)[1] / H)),
     }
     for n, b in zip(names, builders):
         s0, s1 = sc[n]["start"], sc[n]["end"]
@@ -323,7 +323,7 @@ def S1(c, dur):
     L.append(Layer(dyn=marker_dyn(s1, 0.28, 24), d=0.95, t0=c(1, 0.80), enter="none", z=10))
     L.append(Layer(dyn=marker_dyn(s2, 0.28, 24, seed=2), d=0.95, t0=c(1, 0.80) + 0.22, enter="none", z=10))
     # "2 YEARS LATER" slapped on at the time-jump
-    L.append(Layer(banner("2 YEARS LATER", 800, seed=11), x=540, y=1640, sc=1.0, d=1.1, t0=c(1, 0.40), enter="slam", din=0.4, kind="title", z=12, rot=-3, amp=4))
+    L.append(Layer(banner("2 YEARS LATER", 800, seed=11), x=540, y=1450, sc=1.0, d=1.1, t0=c(1, 0.40), enter="slam", din=0.4, kind="title", z=12, rot=-3, amp=4))
     # the question: a dotted line between the two corners with a "?" in the middle
     arc = arc_pts(PT, PG, 120)
     L.append(Layer(dyn=dotted_dyn(arc, 1.1, r=8, gap=30), d=0.9, t0=c(1, 0.82), enter="none", z=8))
@@ -366,7 +366,7 @@ def S2(c, dur):
                        breath=False, z=16, t1=t_b + 1.7, exit="fade", dout=0.3,
                        kf=shift_kf(ballistic(rnd.uniform(-420, 420), rnd.uniform(-980, -620), 1100, 1.8), t_b)))
     L.append(Layer(banner("APRIL 1815", 800, seed=21), x=540, y=215, sc=1.0, d=1.15, t0=c(2, 0.02), enter="slam", din=0.45, kind="title", z=20, rot=-2, amp=3))
-    L.append(Layer(A("tag_tambora"), x=400, y=1730, h=150, d=0.62, t0=c(2, 0.27), enter="pop", din=0.45, rot=-4, z=21))
+    L.append(Layer(A("tag_tambora"), x=770, y=1170, h=150, d=0.72, t0=c(2, 0.27), enter="pop", din=0.45, rot=-4, z=21))
     L.append(Layer(word("VEI 7", 210, (255, 214, 64), 5), x=815, y=520, sc=1.0, d=1.05, t0=c(2, 0.66), enter="slam", din=0.4, rot=6, z=22))
 
     def cam(t):
@@ -483,19 +483,20 @@ def S6(c, dur):
     mcx, mcy = 540, 1120
     mp = mp_factory(mcx, mcy, s)
     ground_y = mp(0, 900)[1]
+    gy = smap(540, ground_y)[1]          # where the machine's wheels touch down after the safe-zone mapping
     c_roll = c(8, 0.0)
     t_end = dur + 3.0
     from sprites_a import sun as mksun, ash_cloud
     # sky: a big marigold sun and slow cream clouds
-    L.append(Layer(mksun(560, color=MARIGOLD, core=(252, 208, 96)), x=820, y=470, sc=0.85, d=0.12, t0=-0.5, enter="grow", din=0.8, amp=3, z=0, spin=0))
+    L.append(Layer(mksun(560, color=MARIGOLD, core=(252, 208, 96)), x=820, y=470, sc=0.85, d=0.12, t0=-0.5, enter="grow", din=0.8, amp=3, z=0, spin=0, safe=False))
     sky = Image.new("RGBA", (2160, 520), (0, 0, 0, 0))
     for i, (x, y, w, h) in enumerate([(120, 130, 520, 300), (800, 300, 440, 260), (1380, 90, 560, 320), (1900, 280, 400, 240)]):
         cl = ash_cloud(w, h, (250, 246, 236), seed=i + 3, border=8, puffs=7)
         sky.alpha_composite(cl, (x, y))
-    L.append(Layer(sky, x=540, y=330, sc=1.0, d=0.2, t0=-0.5, enter="fade", din=0.8, scroll=22, scroll_start=-1.0, z=1, amp=0, breath=False))
+    L.append(Layer(sky, x=540, y=330, sc=1.0, d=0.2, t0=-0.5, enter="fade", din=0.8, scroll=22, scroll_start=-1.0, z=1, amp=0, breath=False, safe=False))
     # world: scrolling hills + treeline + road. Static until the ride begins.
-    L.append(Layer(A("hills_a"), x=540, y=ground_y - 190, sc=1.2, d=0.3, t0=-0.5, enter="rise", din=0.8, scroll=30, scroll_start=c_roll, z=2, amp=0, breath=False))
-    L.append(Layer(A("hills_b"), x=540, y=ground_y - 90, sc=1.2, d=0.42, t0=-0.45, enter="rise", din=0.8, scroll=80, scroll_start=c_roll, z=3, amp=0, breath=False))
+    L.append(Layer(A("hills_a"), x=540, y=gy - 190, sc=1.0, d=0.3, t0=-0.5, enter="rise", din=0.8, scroll=30, scroll_start=c_roll, z=2, amp=0, breath=False, safe=False))
+    L.append(Layer(A("hills_b"), x=540, y=gy - 80, sc=1.0, d=0.42, t0=-0.45, enter="rise", din=0.8, scroll=80, scroll_start=c_roll, z=3, amp=0, breath=False, safe=False))
     rnd = random.Random(9)
     strip = Image.new("RGBA", (2160, 620), (0, 0, 0, 0))
     for i in range(7):
@@ -503,10 +504,12 @@ def S6(c, dur):
         k = rnd.uniform(0.7, 1.0)
         im = im.resize((int(im.width * k), int(im.height * k)), Image.LANCZOS)
         strip.alpha_composite(im, (int(i * 300 + rnd.uniform(-40, 40)), 620 - im.height))
-    L.append(Layer(strip, x=540, y=ground_y - 290, sc=1.0, d=0.6, t0=-0.4, enter="rise", din=0.8, scroll=260, scroll_start=c_roll, z=4, amp=0, breath=False))
-    L.append(Layer(A("road"), x=540, y=ground_y + 300, sc=1.0, d=0.62, t0=-0.5, enter="rise", din=0.7, z=5, amp=0, breath=False, kf=[(0, dict(s=1.0))]))
+    L.append(Layer(strip, x=540, y=gy - 230, sc=0.8, d=0.6, t0=-0.4, enter="rise", din=0.8, scroll=260, scroll_start=c_roll, z=4, amp=0, breath=False, safe=False))
+    fill = Image.new("RGBA", (1080, 1100), (110, 102, 98, 255))
+    L.append(Layer(fill, x=540, y=gy + 300 + 210 + 530, sc=1.0, d=0.62, t0=-0.5, enter="rise", din=0.7, z=5, amp=0, breath=False, safe=False))
+    L.append(Layer(A("road"), x=540, y=gy + 300, sc=1.0, d=0.62, t0=-0.5, enter="rise", din=0.7, z=5, amp=0, breath=False, safe=False))
     from sprites_c import road_dashes
-    L.append(Layer(road_dashes(), x=540, y=ground_y + 235, sc=1.0, d=0.66, t0=-0.4, enter="fade", din=0.6, scroll=620, scroll_start=c_roll, z=6, amp=0, breath=False))
+    L.append(Layer(road_dashes(), x=540, y=gy + 235, sc=1.0, d=0.66, t0=-0.4, enter="fade", din=0.6, scroll=620, scroll_start=c_roll, z=6, amp=0, breath=False, safe=False))
     # numerals + assembly
     L.append(Layer(word("1817", 260, INK, 8), x=300, y=300, sc=1.0, d=1.05, t0=c(7, 0.02), enter="slam", din=0.45, rot=-6, z=30,
                    t1=c(8, 0.05), exit="up", dout=0.6))
@@ -528,9 +531,9 @@ def S6(c, dur):
         L.append(Layer(A("dust"), x=mp(300, 880)[0] + rnd.uniform(-30, 30), y=ground_y - 20, h=rnd.randint(100, 150), d=0.82, t0=t, enter="grow", din=0.3,
                        t1=t + 0.45, exit="fade", dout=0.4, amp=0, z=39, kf=[(t, dict(dx=0, dy=0, lin=True)), (t + 0.9, dict(dx=-260 if t > c_roll else -60, dy=-40, lin=True))]))
     # MANNHEIM signpost sweeps past (low, behind the rider), walker is left behind
-    L.append(Layer(A("sign"), x=1450, y=ground_y - 150, h=400, d=0.72, t0=c(8, 0.0) - 0.2, enter="none", z=11, amp=0, breath=False,
+    L.append(Layer(A("sign"), x=1450, y=gy - 150, h=380, d=0.72, t0=c(8, 0.0) - 0.2, enter="none", z=11, amp=0, breath=False, safe=False,
                    kf=[(c(8, 0.0) - 0.2, dict(dx=0, lin=True)), (c(8, 0.0) + 2.6, dict(dx=-1950, lin=True))]))
-    L.append(Layer(A("walker"), x=820, y=ground_y - 190, h=360, d=0.74, t0=c(8, 0.28), enter="rise", din=0.4, z=11, amp=0, breath=False,
+    L.append(Layer(A("walker"), x=820, y=gy - 170, h=330, d=0.74, t0=c(8, 0.28), enter="rise", din=0.4, z=11, amp=0, breath=False, safe=False,
                    kf=[(c(8, 0.28), dict(dx=0, lin=True)), (c(8, 0.28) + 4.5, dict(dx=-1750, lin=True))]))
     # "No oats required"
     L.append(Layer(A("bucket"), x=860, y=520, h=260, d=1.0, t0=c(8, 0.70), enter="pop", din=0.4, z=41, rot=-6))
@@ -575,7 +578,7 @@ def S7(c, dur):
 
 # ------------------------------------------------ S8: the payoff
 def S8(c, dur):
-    gx, gy, gs = 540, 650, 0.62
+    gx, gy, gs = 540, 610, 0.60
     R = 500 * gs
     PT = gpt((gx, gy, R), None, TAMBORA)
     PG = gpt((gx, gy, R), None, MANNHEIM)
@@ -585,11 +588,11 @@ def S8(c, dur):
     L.append(Layer(A("pin"), x=PG[0], y=PG[1] - 50, h=120, d=0.9, t0=c(10, 0.18), enter="pop", din=0.4, z=5))
     arc = arc_pts(PT, PG, 90)
     L.append(Layer(dyn=dotted_dyn(arc, 1.5, r=8, gap=28), d=0.92, t0=c(10, 0.58), enter="none", z=6))
-    L.append(Layer(dyn=counter_dyn(12000, 1.5, 150, (540, 1075)), d=1.05, t0=c(10, 0.66), enter="slam", din=0.4, z=10))
+    L.append(Layer(dyn=counter_dyn(12000, 1.5, 150, (540, 975)), d=1.05, t0=c(10, 0.66), enter="slam", din=0.4, z=10))
     # the lineage: draisine -> modern bicycle, stacked like stairs
-    L += draisine_layers(300, 1300, 0.40, -1.9, -1.8, -1.75, -1.7, -1.5, c(10, 0.1), d=0.82, z0=20, t_end=dur + 3.0, roll_speed=240)
-    L.append(Layer(A("bike"), x=670, y=1660, h=350, d=0.95, t0=c(10, 0.20), enter="right", din=0.9, z=30, amp=2, spin=0))
-    shaft, hs = arrow_parts((470, 1465), (545, 1560), -60)
+    L += draisine_layers(300, 1285, 0.46, -1.9, -1.8, -1.75, -1.7, -1.5, c(10, 0.1), d=0.82, z0=20, t_end=dur + 3.0, roll_speed=240)
+    L.append(Layer(A("bike"), x=700, y=1640, h=400, d=0.95, t0=c(10, 0.20), enter="right", din=0.9, z=30, amp=2, spin=0))
+    shaft, hs = arrow_parts((545, 1445), (600, 1535), -50)
     L.append(Layer(dyn=marker_dyn(shaft, 0.4, 20, seed=2), d=1.0, t0=c(10, 0.34), enter="none", z=31))
     for h_ in hs:
         L.append(Layer(dyn=marker_dyn(h_, 0.15, 20, seed=3), d=1.0, t0=c(10, 0.34) + 0.35, enter="none", z=31))

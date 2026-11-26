@@ -1,0 +1,915 @@
+{
+ "voice": "ESTIMATE (no audio yet)",
+ "rate": "n/a",
+ "gap": 0.35,
+ "fps": 30,
+ "totalDuration": 62.389,
+ "totalFrames": 1893,
+ "beats": {
+  "1": {
+   "narration": "A volcano erupts in one corner of the world. Two years later, in another, a man gives up on horses.",
+   "start": 0.0,
+   "end": 7.407,
+   "duration": 7.407,
+   "startFrame": 0,
+   "endFrame": 222,
+   "frames": 222,
+   "words": [
+    {
+     "w": "A",
+     "t": 0.0,
+     "d": 0.149
+    },
+    {
+     "w": "volcano",
+     "t": 0.149,
+     "d": 0.508
+    },
+    {
+     "w": "erupts",
+     "t": 0.657,
+     "d": 0.448
+    },
+    {
+     "w": "in",
+     "t": 1.105,
+     "d": 0.209
+    },
+    {
+     "w": "one",
+     "t": 1.314,
+     "d": 0.269
+    },
+    {
+     "w": "corner",
+     "t": 1.583,
+     "d": 0.448
+    },
+    {
+     "w": "of",
+     "t": 2.031,
+     "d": 0.209
+    },
+    {
+     "w": "the",
+     "t": 2.24,
+     "d": 0.269
+    },
+    {
+     "w": "world.",
+     "t": 2.509,
+     "d": 0.388
+    },
+    {
+     "w": "Two",
+     "t": 3.255,
+     "d": 0.269
+    },
+    {
+     "w": "years",
+     "t": 3.524,
+     "d": 0.388
+    },
+    {
+     "w": "later,",
+     "t": 3.913,
+     "d": 0.388
+    },
+    {
+     "w": "in",
+     "t": 4.48,
+     "d": 0.209
+    },
+    {
+     "w": "another,",
+     "t": 4.689,
+     "d": 0.508
+    },
+    {
+     "w": "a",
+     "t": 5.376,
+     "d": 0.149
+    },
+    {
+     "w": "man",
+     "t": 5.525,
+     "d": 0.269
+    },
+    {
+     "w": "gives",
+     "t": 5.794,
+     "d": 0.388
+    },
+    {
+     "w": "up",
+     "t": 6.182,
+     "d": 0.209
+    },
+    {
+     "w": "on",
+     "t": 6.392,
+     "d": 0.209
+    },
+    {
+     "w": "horses.",
+     "t": 6.601,
+     "d": 0.448
+    }
+   ]
+  },
+  "2": {
+   "narration": "April, eighteen fifteen. Tambora, in Indonesia, blows apart. The most powerful eruption in recorded history.",
+   "start": 7.757,
+   "end": 13.313,
+   "duration": 5.556,
+   "startFrame": 233,
+   "endFrame": 399,
+   "frames": 167,
+   "words": [
+    {
+     "w": "April,",
+     "t": 0.0,
+     "d": 0.263
+    },
+    {
+     "w": "eighteen",
+     "t": 0.384,
+     "d": 0.384
+    },
+    {
+     "w": "fifteen.",
+     "t": 0.768,
+     "d": 0.343
+    },
+    {
+     "w": "Tambora,",
+     "t": 1.354,
+     "d": 0.343
+    },
+    {
+     "w": "in",
+     "t": 1.818,
+     "d": 0.141
+    },
+    {
+     "w": "Indonesia,",
+     "t": 1.96,
+     "d": 0.424
+    },
+    {
+     "w": "blows",
+     "t": 2.505,
+     "d": 0.263
+    },
+    {
+     "w": "apart.",
+     "t": 2.768,
+     "d": 0.263
+    },
+    {
+     "w": "The",
+     "t": 3.273,
+     "d": 0.182
+    },
+    {
+     "w": "most",
+     "t": 3.455,
+     "d": 0.222
+    },
+    {
+     "w": "powerful",
+     "t": 3.677,
+     "d": 0.384
+    },
+    {
+     "w": "eruption",
+     "t": 4.061,
+     "d": 0.384
+    },
+    {
+     "w": "in",
+     "t": 4.445,
+     "d": 0.141
+    },
+    {
+     "w": "recorded",
+     "t": 4.586,
+     "d": 0.384
+    },
+    {
+     "w": "history.",
+     "t": 4.97,
+     "d": 0.343
+    }
+   ]
+  },
+  "3": {
+   "narration": "Ash and sulphur wrap the whole Earth. Sunlight dims. The planet cools.",
+   "start": 13.663,
+   "end": 18.107,
+   "duration": 4.444,
+   "startFrame": 410,
+   "endFrame": 543,
+   "frames": 133,
+   "words": [
+    {
+     "w": "Ash",
+     "t": 0.0,
+     "d": 0.217
+    },
+    {
+     "w": "and",
+     "t": 0.217,
+     "d": 0.217
+    },
+    {
+     "w": "sulphur",
+     "t": 0.435,
+     "d": 0.411
+    },
+    {
+     "w": "wrap",
+     "t": 0.845,
+     "d": 0.266
+    },
+    {
+     "w": "the",
+     "t": 1.111,
+     "d": 0.217
+    },
+    {
+     "w": "whole",
+     "t": 1.328,
+     "d": 0.314
+    },
+    {
+     "w": "Earth.",
+     "t": 1.642,
+     "d": 0.314
+    },
+    {
+     "w": "Sunlight",
+     "t": 2.246,
+     "d": 0.459
+    },
+    {
+     "w": "dims.",
+     "t": 2.705,
+     "d": 0.266
+    },
+    {
+     "w": "The",
+     "t": 3.261,
+     "d": 0.217
+    },
+    {
+     "w": "planet",
+     "t": 3.478,
+     "d": 0.362
+    },
+    {
+     "w": "cools.",
+     "t": 3.84,
+     "d": 0.314
+    }
+   ]
+  },
+  "4": {
+   "narration": "Eighteen sixteen becomes the year without a summer. Harvests fail across Europe.",
+   "start": 18.457,
+   "end": 22.901,
+   "duration": 4.444,
+   "startFrame": 554,
+   "endFrame": 687,
+   "frames": 133,
+   "words": [
+    {
+     "w": "Eighteen",
+     "t": 0.0,
+     "d": 0.435
+    },
+    {
+     "w": "sixteen",
+     "t": 0.435,
+     "d": 0.389
+    },
+    {
+     "w": "becomes",
+     "t": 0.825,
+     "d": 0.389
+    },
+    {
+     "w": "the",
+     "t": 1.214,
+     "d": 0.206
+    },
+    {
+     "w": "year",
+     "t": 1.42,
+     "d": 0.252
+    },
+    {
+     "w": "without",
+     "t": 1.672,
+     "d": 0.389
+    },
+    {
+     "w": "a",
+     "t": 2.062,
+     "d": 0.115
+    },
+    {
+     "w": "summer.",
+     "t": 2.176,
+     "d": 0.344
+    },
+    {
+     "w": "Harvests",
+     "t": 2.795,
+     "d": 0.435
+    },
+    {
+     "w": "fail",
+     "t": 3.23,
+     "d": 0.252
+    },
+    {
+     "w": "across",
+     "t": 3.482,
+     "d": 0.344
+    },
+    {
+     "w": "Europe.",
+     "t": 3.826,
+     "d": 0.344
+    }
+   ]
+  },
+  "5": {
+   "narration": "In Germany, oats, the fuel of every horse, run short. Horses starve. Many are slaughtered.",
+   "start": 23.252,
+   "end": 28.808,
+   "duration": 5.556,
+   "startFrame": 698,
+   "endFrame": 864,
+   "frames": 167,
+   "words": [
+    {
+     "w": "In",
+     "t": 0.0,
+     "d": 0.163
+    },
+    {
+     "w": "Germany,",
+     "t": 0.163,
+     "d": 0.395
+    },
+    {
+     "w": "oats,",
+     "t": 0.697,
+     "d": 0.256
+    },
+    {
+     "w": "the",
+     "t": 1.093,
+     "d": 0.209
+    },
+    {
+     "w": "fuel",
+     "t": 1.302,
+     "d": 0.256
+    },
+    {
+     "w": "of",
+     "t": 1.558,
+     "d": 0.163
+    },
+    {
+     "w": "every",
+     "t": 1.72,
+     "d": 0.302
+    },
+    {
+     "w": "horse,",
+     "t": 2.022,
+     "d": 0.302
+    },
+    {
+     "w": "run",
+     "t": 2.464,
+     "d": 0.209
+    },
+    {
+     "w": "short.",
+     "t": 2.673,
+     "d": 0.302
+    },
+    {
+     "w": "Horses",
+     "t": 3.255,
+     "d": 0.349
+    },
+    {
+     "w": "starve.",
+     "t": 3.603,
+     "d": 0.349
+    },
+    {
+     "w": "Many",
+     "t": 4.231,
+     "d": 0.256
+    },
+    {
+     "w": "are",
+     "t": 4.487,
+     "d": 0.209
+    },
+    {
+     "w": "slaughtered.",
+     "t": 4.696,
+     "d": 0.581
+    }
+   ]
+  },
+  "6": {
+   "narration": "A German inventor named Karl Drais looks at the empty stables and asks: what if you didn't need a horse?",
+   "start": 29.157,
+   "end": 36.564,
+   "duration": 7.407,
+   "startFrame": 875,
+   "endFrame": 1097,
+   "frames": 222,
+   "words": [
+    {
+     "w": "A",
+     "t": 0.0,
+     "d": 0.152
+    },
+    {
+     "w": "German",
+     "t": 0.152,
+     "d": 0.455
+    },
+    {
+     "w": "inventor",
+     "t": 0.607,
+     "d": 0.577
+    },
+    {
+     "w": "named",
+     "t": 1.184,
+     "d": 0.395
+    },
+    {
+     "w": "Karl",
+     "t": 1.579,
+     "d": 0.334
+    },
+    {
+     "w": "Drais",
+     "t": 1.912,
+     "d": 0.395
+    },
+    {
+     "w": "looks",
+     "t": 2.307,
+     "d": 0.395
+    },
+    {
+     "w": "at",
+     "t": 2.702,
+     "d": 0.212
+    },
+    {
+     "w": "the",
+     "t": 2.914,
+     "d": 0.273
+    },
+    {
+     "w": "empty",
+     "t": 3.187,
+     "d": 0.395
+    },
+    {
+     "w": "stables",
+     "t": 3.582,
+     "d": 0.516
+    },
+    {
+     "w": "and",
+     "t": 4.098,
+     "d": 0.273
+    },
+    {
+     "w": "asks:",
+     "t": 4.371,
+     "d": 0.334
+    },
+    {
+     "w": "what",
+     "t": 4.887,
+     "d": 0.334
+    },
+    {
+     "w": "if",
+     "t": 5.221,
+     "d": 0.212
+    },
+    {
+     "w": "you",
+     "t": 5.434,
+     "d": 0.273
+    },
+    {
+     "w": "didn't",
+     "t": 5.707,
+     "d": 0.455
+    },
+    {
+     "w": "need",
+     "t": 6.162,
+     "d": 0.334
+    },
+    {
+     "w": "a",
+     "t": 6.496,
+     "d": 0.152
+    },
+    {
+     "w": "horse?",
+     "t": 6.648,
+     "d": 0.395
+    }
+   ]
+  },
+  "7": {
+   "narration": "In eighteen seventeen he builds a wooden machine. Two wheels. No pedals. You push the ground away with your feet.",
+   "start": 36.915,
+   "end": 44.322,
+   "duration": 7.407,
+   "startFrame": 1107,
+   "endFrame": 1330,
+   "frames": 222,
+   "words": [
+    {
+     "w": "In",
+     "t": 0.0,
+     "d": 0.18
+    },
+    {
+     "w": "eighteen",
+     "t": 0.18,
+     "d": 0.489
+    },
+    {
+     "w": "seventeen",
+     "t": 0.669,
+     "d": 0.54
+    },
+    {
+     "w": "he",
+     "t": 1.209,
+     "d": 0.18
+    },
+    {
+     "w": "builds",
+     "t": 1.389,
+     "d": 0.386
+    },
+    {
+     "w": "a",
+     "t": 1.775,
+     "d": 0.129
+    },
+    {
+     "w": "wooden",
+     "t": 1.903,
+     "d": 0.386
+    },
+    {
+     "w": "machine.",
+     "t": 2.289,
+     "d": 0.437
+    },
+    {
+     "w": "Two",
+     "t": 3.035,
+     "d": 0.231
+    },
+    {
+     "w": "wheels.",
+     "t": 3.266,
+     "d": 0.386
+    },
+    {
+     "w": "No",
+     "t": 3.961,
+     "d": 0.18
+    },
+    {
+     "w": "pedals.",
+     "t": 4.141,
+     "d": 0.386
+    },
+    {
+     "w": "You",
+     "t": 4.835,
+     "d": 0.231
+    },
+    {
+     "w": "push",
+     "t": 5.067,
+     "d": 0.283
+    },
+    {
+     "w": "the",
+     "t": 5.35,
+     "d": 0.231
+    },
+    {
+     "w": "ground",
+     "t": 5.581,
+     "d": 0.386
+    },
+    {
+     "w": "away",
+     "t": 5.967,
+     "d": 0.283
+    },
+    {
+     "w": "with",
+     "t": 6.25,
+     "d": 0.283
+    },
+    {
+     "w": "your",
+     "t": 6.533,
+     "d": 0.283
+    },
+    {
+     "w": "feet.",
+     "t": 6.815,
+     "d": 0.283
+    }
+   ]
+  },
+  "8": {
+   "narration": "He rides it out of Mannheim, faster than anyone can walk. No oats required.",
+   "start": 44.672,
+   "end": 49.857,
+   "duration": 5.185,
+   "startFrame": 1340,
+   "endFrame": 1496,
+   "frames": 156,
+   "words": [
+    {
+     "w": "He",
+     "t": 0.0,
+     "d": 0.191
+    },
+    {
+     "w": "rides",
+     "t": 0.191,
+     "d": 0.355
+    },
+    {
+     "w": "it",
+     "t": 0.546,
+     "d": 0.191
+    },
+    {
+     "w": "out",
+     "t": 0.737,
+     "d": 0.246
+    },
+    {
+     "w": "of",
+     "t": 0.982,
+     "d": 0.191
+    },
+    {
+     "w": "Mannheim,",
+     "t": 1.173,
+     "d": 0.518
+    },
+    {
+     "w": "faster",
+     "t": 1.856,
+     "d": 0.409
+    },
+    {
+     "w": "than",
+     "t": 2.265,
+     "d": 0.3
+    },
+    {
+     "w": "anyone",
+     "t": 2.565,
+     "d": 0.409
+    },
+    {
+     "w": "can",
+     "t": 2.975,
+     "d": 0.246
+    },
+    {
+     "w": "walk.",
+     "t": 3.22,
+     "d": 0.3
+    },
+    {
+     "w": "No",
+     "t": 3.848,
+     "d": 0.191
+    },
+    {
+     "w": "oats",
+     "t": 4.039,
+     "d": 0.3
+    },
+    {
+     "w": "required.",
+     "t": 4.339,
+     "d": 0.518
+    }
+   ]
+  },
+  "9": {
+   "narration": "Historians still argue about the famine's role. But the timing is hard to ignore.",
+   "start": 50.207,
+   "end": 55.392,
+   "duration": 5.185,
+   "startFrame": 1506,
+   "endFrame": 1662,
+   "frames": 156,
+   "words": [
+    {
+     "w": "Historians",
+     "t": 0.0,
+     "d": 0.602
+    },
+    {
+     "w": "still",
+     "t": 0.602,
+     "d": 0.34
+    },
+    {
+     "w": "argue",
+     "t": 0.943,
+     "d": 0.34
+    },
+    {
+     "w": "about",
+     "t": 1.283,
+     "d": 0.34
+    },
+    {
+     "w": "the",
+     "t": 1.624,
+     "d": 0.236
+    },
+    {
+     "w": "famine's",
+     "t": 1.859,
+     "d": 0.498
+    },
+    {
+     "w": "role.",
+     "t": 2.357,
+     "d": 0.288
+    },
+    {
+     "w": "But",
+     "t": 2.959,
+     "d": 0.236
+    },
+    {
+     "w": "the",
+     "t": 3.195,
+     "d": 0.236
+    },
+    {
+     "w": "timing",
+     "t": 3.43,
+     "d": 0.393
+    },
+    {
+     "w": "is",
+     "t": 3.823,
+     "d": 0.183
+    },
+    {
+     "w": "hard",
+     "t": 4.007,
+     "d": 0.288
+    },
+    {
+     "w": "to",
+     "t": 4.295,
+     "d": 0.183
+    },
+    {
+     "w": "ignore.",
+     "t": 4.478,
+     "d": 0.393
+    }
+   ]
+  },
+  "10": {
+   "narration": "That machine is the ancestor of every bicycle. A reply to a volcano, twelve thousand kilometres away.",
+   "start": 55.743,
+   "end": 62.039,
+   "duration": 6.296,
+   "startFrame": 1672,
+   "endFrame": 1861,
+   "frames": 189,
+   "words": [
+    {
+     "w": "That",
+     "t": 0.0,
+     "d": 0.283
+    },
+    {
+     "w": "machine",
+     "t": 0.283,
+     "d": 0.437
+    },
+    {
+     "w": "is",
+     "t": 0.72,
+     "d": 0.18
+    },
+    {
+     "w": "the",
+     "t": 0.899,
+     "d": 0.231
+    },
+    {
+     "w": "ancestor",
+     "t": 1.131,
+     "d": 0.488
+    },
+    {
+     "w": "of",
+     "t": 1.619,
+     "d": 0.18
+    },
+    {
+     "w": "every",
+     "t": 1.799,
+     "d": 0.334
+    },
+    {
+     "w": "bicycle.",
+     "t": 2.133,
+     "d": 0.437
+    },
+    {
+     "w": "A",
+     "t": 2.878,
+     "d": 0.128
+    },
+    {
+     "w": "reply",
+     "t": 3.007,
+     "d": 0.334
+    },
+    {
+     "w": "to",
+     "t": 3.341,
+     "d": 0.18
+    },
+    {
+     "w": "a",
+     "t": 3.521,
+     "d": 0.128
+    },
+    {
+     "w": "volcano,",
+     "t": 3.649,
+     "d": 0.437
+    },
+    {
+     "w": "twelve",
+     "t": 4.24,
+     "d": 0.385
+    },
+    {
+     "w": "thousand",
+     "t": 4.626,
+     "d": 0.488
+    },
+    {
+     "w": "kilometres",
+     "t": 5.114,
+     "d": 0.591
+    },
+    {
+     "w": "away.",
+     "t": 5.705,
+     "d": 0.283
+    }
+   ]
+  }
+ }
+}

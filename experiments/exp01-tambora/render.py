@@ -25,6 +25,21 @@ sys.path.insert(0, HERE)
 W, H, FPS = 1080, 1920, 30
 HOLD_END = 0.7           # seconds the last frame lingers after the final beat
 
+# --- platform safe zone (TikTok/Reels/Shorts): top 180, bottom 420, right 150 -> usable x 0..930, y 180..1500.
+# Content layers are mapped into it (uniform scale about the frame centre, then shifted to the safe centre).
+# Decoration (ground, clippings, tape, confetti) stays full-bleed on purpose: it may sit under the UI.
+SAFE_ON = os.environ.get("VOX_SAFE", "1") == "1"
+SAFE_S = 0.72
+SAFE_C = (465.0, 805.0)
+SAFE_TITLE = 0.90        # headline banners shrink less: type should stay large on a phone
+
+
+def smap(x, y):
+    """Design-space point -> safe-zone point."""
+    if not SAFE_ON:
+        return x, y
+    return SAFE_C[0] + (x - W / 2) * SAFE_S, SAFE_C[1] + (y - H / 2) * SAFE_S
+
 
 # ------------------------------------------------------------------ easing
 def clamp(x, a=0.0, b=1.0):
@@ -52,7 +67,7 @@ class Layer:
     def __init__(self, img=None, x=W / 2, y=H / 2, h=None, sc=None, d=0.6, t0=0.0, enter="pop", din=0.55,
                  t1=None, exit="fade", dout=0.45, rot=0.0, kf=None, pivot=None, cam=1.0, amp=None, spin=None,
                  rate=0.0, z=0, alpha=1.0, flip=False, scroll=None, dyn=None, kind="obj", breath=True,
-                 hold_dx=0.0, track=None, scroll_start=0.0):
+                 hold_dx=0.0, track=None, scroll_start=0.0, safe=None):
         self.img, self.x, self.y, self.d = img, x, y, d
         self.t0, self.enter, self.din = t0, enter, din
         self.t1, self.exit, self.dout = t1, exit, dout
@@ -60,6 +75,7 @@ class Layer:
         self.z, self.alpha, self.scroll, self.dyn, self.kind = z, alpha, scroll, dyn, kind
         self.rate, self.breath, self.track = rate, breath, track
         self.scroll_start = scroll_start
+        self.safe = (kind not in ("ground", "clip", "tape", "confetti")) if safe is None else safe
         if img is not None:
             if flip:
                 self.img = img.transpose(Image.FLIP_LEFT_RIGHT)
@@ -229,7 +245,11 @@ class Renderer:
                 img, (ox, oy) = r
                 px = ox + dx + camx + tx
                 py = oy + dy + camy + ty
-                self._blit(cv, img, px * S, py * S, 1.0 * S, 0, al, topleft=True)
+                k = 1.0
+                if l.safe and SAFE_ON:
+                    px, py = smap(px, py)
+                    k = SAFE_S
+                self._blit(cv, img, px * S, py * S, k * S, 0, al, topleft=True)
                 continue
             base = self.prep(l)
             if l.scroll:
@@ -245,6 +265,9 @@ class Renderer:
                     k += 1
                 continue
             f = zs * sm * breath
+            if l.safe and SAFE_ON:
+                px, py = smap(px, py)
+                f *= SAFE_TITLE if l.kind == "title" else SAFE_S
             self._blit(cv, base, px * S, py * S, f, rot + l.rot + spin, al, pivot=l.pivot)
         return cv.convert("RGB")
 
