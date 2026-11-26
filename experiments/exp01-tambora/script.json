@@ -1,0 +1,20 @@
+{
+ "title": "The Volcano Behind the Bicycle",
+ "arc": "hook_payoff / myth-adjacent reversal (hook poses a question, last beat answers it)",
+ "language": "en",
+ "wps_estimate": 2.7,
+ "pause_between_beats_s": 0.35,
+ "note": "Durations in timing.json are ESTIMATES from word count. No voice-over exists yet. Final VO = Gemini TTS, one wav per beat in audio/vo/beat_NN.wav; run timing.py to re-clock.",
+ "beats": [
+  {"id": 1,  "scene": "S1", "text": "A volcano erupts in one corner of the world. Two years later, in another, a man gives up on horses."},
+  {"id": 2,  "scene": "S2", "text": "April, eighteen fifteen. Tambora, in Indonesia, blows apart. The most powerful eruption in recorded history."},
+  {"id": 3,  "scene": "S3", "text": "Ash and sulphur wrap the whole Earth. Sunlight dims. The planet cools."},
+  {"id": 4,  "scene": "S4", "text": "Eighteen sixteen becomes the year without a summer. Harvests fail across Europe."},
+  {"id": 5,  "scene": "S5", "text": "In Germany, oats, the fuel of every horse, run short. Horses starve. Many are slaughtered."},
+  {"id": 6,  "scene": "S5", "text": "A German inventor named Karl Drais looks at the empty stables and asks: what if you didn't need a horse?"},
+  {"id": 7,  "scene": "S6", "text": "In eighteen seventeen he builds a wooden machine. Two wheels. No pedals. You push the ground away with your feet."},
+  {"id": 8,  "scene": "S6", "text": "He rides it out of Mannheim, faster than anyone can walk. No oats required."},
+  {"id": 9,  "scene": "S7", "text": "Historians still argue about the famine's role. But the timing is hard to ignore."},
+  {"id": 10, "scene": "S8", "text": "That machine is the ancestor of every bicycle. A reply to a volcano, twelve thousand kilometres away."}
+ ]
+}

@@ -1,0 +1,165 @@
+{
+ "total": 62.389,
+ "beats": [
+  {
+   "id": 1,
+   "scene": "S1",
+   "start": 0.0,
+   "dur": 7.757,
+   "speech": 7.407,
+   "words": 20,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 2,
+   "scene": "S2",
+   "start": 7.757,
+   "dur": 5.906,
+   "speech": 5.556,
+   "words": 15,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 3,
+   "scene": "S3",
+   "start": 13.663,
+   "dur": 4.794,
+   "speech": 4.444,
+   "words": 12,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 4,
+   "scene": "S4",
+   "start": 18.457,
+   "dur": 4.794,
+   "speech": 4.444,
+   "words": 12,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 5,
+   "scene": "S5",
+   "start": 23.252,
+   "dur": 5.906,
+   "speech": 5.556,
+   "words": 15,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 6,
+   "scene": "S5",
+   "start": 29.157,
+   "dur": 7.757,
+   "speech": 7.407,
+   "words": 20,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 7,
+   "scene": "S6",
+   "start": 36.915,
+   "dur": 7.757,
+   "speech": 7.407,
+   "words": 20,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 8,
+   "scene": "S6",
+   "start": 44.672,
+   "dur": 5.535,
+   "speech": 5.185,
+   "words": 14,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 9,
+   "scene": "S7",
+   "start": 50.207,
+   "dur": 5.535,
+   "speech": 5.185,
+   "words": 14,
+   "source": "estimate",
+   "word_times": null
+  },
+  {
+   "id": 10,
+   "scene": "S8",
+   "start": 55.743,
+   "dur": 6.646,
+   "speech": 6.296,
+   "words": 17,
+   "source": "estimate",
+   "word_times": null
+  }
+ ],
+ "scenes": {
+  "S1": {
+   "start": 0.0,
+   "end": 7.757,
+   "beats": [
+    1
+   ]
+  },
+  "S2": {
+   "start": 7.757,
+   "end": 13.663,
+   "beats": [
+    2
+   ]
+  },
+  "S3": {
+   "start": 13.663,
+   "end": 18.457,
+   "beats": [
+    3
+   ]
+  },
+  "S4": {
+   "start": 18.457,
+   "end": 23.252,
+   "beats": [
+    4
+   ]
+  },
+  "S5": {
+   "start": 23.252,
+   "end": 36.915,
+   "beats": [
+    5,
+    6
+   ]
+  },
+  "S6": {
+   "start": 36.915,
+   "end": 50.207,
+   "beats": [
+    7,
+    8
+   ]
+  },
+  "S7": {
+   "start": 50.207,
+   "end": 55.743,
+   "beats": [
+    9
+   ]
+  },
+  "S8": {
+   "start": 55.743,
+   "end": 62.389,
+   "beats": [
+    10
+   ]
+  }
+ }
+}
